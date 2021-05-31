@@ -1,0 +1,28 @@
+.calendar-header {
+  moz-user-select: -moz-none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-size: 20px;
+  border: 1px solid #e3ecf3;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .header-center {
+    text-align: center;
+    .title,
+    .next-month {
+      margin-left: 20px;
+    }
+    .prev-month,
+    .next-month {
+      cursor: pointer;
+      color: #00a7ff;
+    }
+  }
+}
