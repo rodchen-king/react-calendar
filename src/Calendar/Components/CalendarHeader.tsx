@@ -2,7 +2,7 @@
  * @Description:
  * @Author: rodchen
  * @Date: 2021-05-31 23:54:30
- * @LastEditTime: 2021-06-01 02:10:14
+ * @LastEditTime: 2021-06-01 09:42:40
  * @LastEditors: rodchen
  */
 import React, { useEffect, useCallback, useState } from 'react';
@@ -31,22 +31,25 @@ export default ({ observer }: { observer: Subject }) => {
   /**
    * 主题发布信息，通知观察者
    */
-  const observerNotify = () => {
-    setHeaderContent(getHeaderContent(firstDayOfMonth));
-    observer.notify(firstDayOfMonth);
+  const observerNotify = (currentFirstDayOfMonth: Date) => {
+    setHeaderContent(getHeaderContent(currentFirstDayOfMonth));
+    observer.notify(currentFirstDayOfMonth);
   };
 
   /**
    * 页面操作
    */
   const goPrev = () => {
-    setFirstDayOfMonth(getFirstDayOfPrevMonth(firstDayOfMonth));
-    observerNotify();
+    const preFirstDayOfMonth = getFirstDayOfPrevMonth(firstDayOfMonth);
+    setFirstDayOfMonth(preFirstDayOfMonth);
+    observerNotify(preFirstDayOfMonth);
   };
 
   const goNext = () => {
-    setFirstDayOfMonth(getFirstDayOfNextMonth(firstDayOfMonth));
-    observerNotify();
+    const nextFirstDayOfMonth = getFirstDayOfNextMonth(firstDayOfMonth);
+
+    setFirstDayOfMonth(nextFirstDayOfMonth);
+    observerNotify(nextFirstDayOfMonth);
   };
 
   return (
