@@ -2,11 +2,9 @@
  * @Description:
  * @Author: rodchen
  * @Date: 2021-05-31 23:54:53
- * @LastEditTime: 2021-06-01 00:14:09
+ * @LastEditTime: 2021-06-18 20:29:46
  * @LastEditors: rodchen
  */
-
-import { ObserverItem } from '../type/LibType';
 
 /*
  * Subject
